@@ -11,7 +11,7 @@ Live deployment and screenshot coming soon.
 To run locally:
 
 ```bash
-git clone https://github.com/yourname/ferality-tracker.git
+git clone https://github.com/ok-kee/ferality-tracker.git
 cd ferality-tracker
 bundle install
 bin/setup
