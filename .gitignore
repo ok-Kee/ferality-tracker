@@ -1,0 +1,48 @@
+# Rails default and deployment
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/.keep
+/tmp/storage/*
+!/tmp/storage/.keep
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/assets
+/storage/*
+!/storage/.keep
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Local secrets
+/config/master.key
+/config/credentials.yml.enc
+/config/credentials/*.key
+
+# Bundler
+/.bundle
+
+# Environment files
+/.env*
+
+# Node/Yarn
+/node_modules/
+yarn-error.log
+
+# System and editor files
+.DS_Store
+.byebug_history
+
+# Kamal deployment
+.kamal/
+/.kamal
+/config/deploy*.yml
+
+# CI and dev tools
+/.github
+/.devcontainer
+
+# Docker
+/.dockerignore
+/Dockerfile*

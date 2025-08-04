@@ -1,0 +1,26 @@
+<div id="<%= dom_id post %>">
+  <h2><%= post.title %></h2>
+
+<div class="post-section">
+  <p class="label">Category:
+    <span class="category <%= post.category.downcase %>"><%= post.category %></span>
+  </p>
+</div>
+
+<div class="post-section">
+  <p class="label">Logged at:</p>
+  <p class="value"><%= post.created_at.strftime("%b %d, %Y %I:%M %p") %></p>
+</div>
+
+<div class="post-section">
+  <p class="label">Description:</p>
+  <p class="value"><%= post.description %></p>
+</div>
+
+<div class="post-section">
+  <p class="label">Knowledge Gained:</p>
+  <p class="value"><%= post.learned %></p>
+</div>
+
+
+</div>

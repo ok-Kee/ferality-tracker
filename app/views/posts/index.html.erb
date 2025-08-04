@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+
+<h2>🔥 Current Failure Streak: <%= @streak %> days</h2>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    
+    <div class="post-card">
+      <div class="post-meta">
+        <span class="category <%= post.category.downcase %>"><%= post.category %></span>
+        <span class="timestamp"><%= post.created_at.strftime("%b %d, %Y %l:%M %p") %></span>
+      </div>
+      <%= link_to post do %> 
+        <h3><%= post.title %></h3>
+      <% end %>
+      <p><%= post.description %></p>
+    </div>
+    
+  <% end %>
+  
+</div>
+
+<%= link_to "➕ Log a New Failure", new_post_path, class: "btn" %>
+

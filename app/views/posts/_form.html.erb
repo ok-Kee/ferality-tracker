@@ -1,0 +1,50 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-card">
+    <h2>📋 Fill Out the Failure Log</h2>
+    
+    <div class="definitions">
+      <h3>What counts as a failure?</h3>
+      <ul>
+        <li><strong>Error:</strong> A slip: like a typo, missed config, or merge conflict</li>
+        <li><strong>Mistake:</strong> A wrong decision with hindsight (e.g. wrong tool, bad estimate)</li>
+        <li><strong>Failure:</strong> A bold attempt that didn’t work out (but you learned from it)</li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :title, "Name your Failure"%>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :category, "What *kind* of failure was this?"%>
+      <%= form.select :category, options_for_select(["Error", "Mistake", "Failure"]), {},  class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description, "What happened?"%>
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :learned, "What did you learn?"%>
+      <%= form.text_area :learned, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit post.persisted? ? "Update Failure Record" : "Acknowledge This Failure", class: "btn" %>
+    </div>
+  </div>
+<% end %>

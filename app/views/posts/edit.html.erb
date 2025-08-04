@@ -1,0 +1,14 @@
+<h2>
+  <span role="img" aria-label="wrench">🛠️</span>
+  Edit This Glorious Failure
+</h2>
+<p class="subtext">Refine your story. Growth is in the details.</p>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div class="post-actions">
+  <%= link_to "📄 View", @post, class: "btn" %>
+  <%= link_to "📜 Back", posts_path, class: "btn" %>
+</div>

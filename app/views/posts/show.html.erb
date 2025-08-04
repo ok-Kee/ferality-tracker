@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="post-card">
+  <%= render @post %>
+</div>
+
+<div class="post-actions">
+  <%= link_to "✏️ Edit", edit_post_path(@post), class: "btn" %>
+  <%= link_to "📜 Back", posts_path, class: "btn" %>
+  <%= button_to "🔥 Delete", @post, method: :delete, class: "btn", data: { turbo_confirm: "Sure you want to destroy this beautiful failure?" } %>
+</div>
