@@ -20,9 +20,10 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
-# Production environment uses PostgreSQL with credentials set via ENV variables.
-# This is required for deployment platforms like Render or Heroku that do not support SQLite.
+# In production, we use PostgreSQL (required by platforms like Render).
+# No secondary databases (e.g., cable, cache) are configured for simplicity.
 production:
+  <<: *default
   adapter: postgresql
   encoding: unicode
   pool: 5
