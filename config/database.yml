@@ -20,7 +20,7 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
-# Production: PostgreSQL on Render. One DB, two roles (primary, cable).
+# Production: PostgreSQL on Render
 production:
   prod_defaults: &prod_defaults
     adapter: postgresql
@@ -37,5 +37,12 @@ production:
 
   cable:
     <<: *prod_defaults
-    # Keep cable migrations path so Solid Cable’s migrations run if present:
     migrations_paths: db/cable_migrate
+
+  queue:
+    <<: *prod_defaults
+    migrations_paths: db/queue_migrate
+
+  cache:
+    <<: *prod_defaults
+    migrations_paths: db/cache_migrate
