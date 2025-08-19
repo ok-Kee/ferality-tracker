@@ -2,7 +2,9 @@
 
 Ferality Tracker is a lightweight failure tracker that lets you log your personal failures and what you learned from them. Inspired by the company Corporate Tools and their belief that all failures are opportunities to learn and grow.
 
-Live deployment and screenshot coming soon.
+Live deployment here: https://ferality-tracker.onrender.com/
+
+![screenshot](images/screenshot.png)
 
 ---
 
