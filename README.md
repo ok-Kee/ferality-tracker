@@ -46,7 +46,7 @@ To use it:
     
 - Describe what happened and what you learned
     
-- Submit and track your streak
+- Submit and track how long it's been since the last failure
     
 
 In the spirit of Corporate Tools’ “sprint toward failure” mentality, the app tracks how many days in a row you’ve logged something. As they say on their Why Work Here page: "If you’re into learning, you understand the quickest and easiest way to do so is to fail a lot of times."
@@ -78,7 +78,7 @@ In the spirit of Corporate Tools’ “sprint toward failure” mentality, the a
     
 - Learning field to reflect on each experience
     
-- Daily streak counter based on `created_at`
+- Days Since Last Failure counter based on `created_at`
     
 - Light/dark mode toggle with persistent setting
     
