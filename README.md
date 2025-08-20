@@ -65,7 +65,7 @@ In the spirit of Corporate Tools’ “sprint toward failure” mentality, the a
     
 - **Interactivity:** Turbo (Hotwire)
     
-- **Deployment:** Coming Soon
+- **Deployment:** Render
     
 
 ---
