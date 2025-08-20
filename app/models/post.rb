@@ -1,23 +1,25 @@
 class Post < ApplicationRecord
 
+    CATEGORIES = %w(Error Mistake Failure)
+
     validates :title, :category, :description, :learned, presence: true
-    validates :category, inclusion: { in: ["Error", "Mistake", "Failure"] }
+    validates :category, inclusion: { in: CATEGORIES}
 
+    scope :failures, -> { where(category: "Failure")}
 
-    def self.current_failure_streak
-      streak = 0
-      previous = nil
+    def self.days_since_last_failure
+      unless failures.exists?
+        return days_since_last_failure = "No Failures Yet"
 
-      order(created_at: :desc).each do |post|
-        if previous.nil? || (previous.created_at - post.created_at) <= 1.day
-          streak += 1
-          previous = post
-        else
-          break
-        end
       end
 
-      streak
+      last_failure_date  = failures.last.created_at.to_date
+
+      days_since_last_failure = Date.current - last_failure_date
+
+      days_since_last_failure.to_i
+
 
     end
+
 end
