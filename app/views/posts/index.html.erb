@@ -4,7 +4,7 @@
 
 <h1>Ferailty Tracker</h1>
 
-<h2>📅 Days Since Last Failure: <%= @days_since_last_failure %></h2>
+<h2>📅 Days Since Last Failure: <%= @days_since_last_failure || "No Failures Yet" %></h2>
 
 <div id="posts">
   <% @posts.each do |post| %>

@@ -7,18 +7,15 @@ class Post < ApplicationRecord
 
     scope :failures, -> { where(category: "Failure")}
 
+    # Returns the number of days since the most recent Failure post, or nil if no failures exist.
     def self.days_since_last_failure
       unless failures.exists?
-        return days_since_last_failure = "No Failures Yet"
-
+        return nil
       end
 
-      last_failure_date  = failures.last.created_at.to_date
+      last_failure  = failures.order(created_at: :desc).first
 
-      days_since_last_failure = Date.current - last_failure_date
-
-      days_since_last_failure.to_i
-
+      (Date.current - last_failure.created_at.to_date).to_i
 
     end
 
